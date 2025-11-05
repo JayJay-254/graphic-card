@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostrp Grid</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <style>
+        .one{
+            background-color: rgb(8, 8, 8);
+            height: 40vh;
+        }
+        .two{
+            background-color: rgb(73, 72, 148);
+            height: 40vh;
+        }
+        .three{
+            background-color: rgb(6, 255, 68);
+            height: 40vh;
+        }
+        .four{
+            background-color: rgb(241, 10, 10);
+            height: 40vh;
+        }
+        .card img{
+            max-width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .card{
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+        @media (max-width: 700px){
+            .card{
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="one col-md-3 col-sm-3 col-3"></div>
+            <div class="two col-md-3 col-sm-3 col-3"></div>
+            <div class="three col-md-3 col-sm-3 col-3"></div>
+            <div class="four col-md-3 col-sm-3 col-3"></div>
+        </div>
+        <div class="row">
+         <div class="card-one col-md-3 col-sm-3 col-3">
+                <div class="card" style="width: 18rem;">
+                  <img src="./assets/images/cardimage1.jpeg" class="card-img-top" alt="...">
+                 <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+              </div>
+          </div>
+            <div class="card-two col-md-3 col-sm-3 col-3">
+                <div class="card" style="width: 18rem;">
+                  <img src="./assets/images/cardimage2.jpeg" class="card-img-top" alt="...">
+                 <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                 </div>
+              </div>
+            </div>
+            <div class="card-three col-md-3 col-sm-3 col-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/images/cardimage3.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-four col-md-3 col-sm-3 col-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/images/cardimage4.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
