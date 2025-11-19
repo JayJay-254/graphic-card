@@ -1,0 +1,30 @@
+```html
+{% extends 'core/base.html' %}
+{% block content %}
+<h3>Welcome, {{ user.username }}!</h3>
+<div class="mb-4">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Post</button>
+  </form>
+</div>
+
+{% for post in posts %}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted">@{{ post.author.username }} - {{ post.created_at|date:"M d, H:i" }}</h6>
+      <p class="card-text">{{ post.content }}</p>
+      {% if post.original %}
+        <p class="text-secondary small">Shared from @{{ post.original.author.username }}</p>
+      {% endif %}
+      <a href="{% url 'post_detail' post.id %}" class="btn btn-sm btn-outline-primary">Comments</a>
+      <a href="{% url 'like_toggle' post.id %}" class="btn btn-sm btn-outline-success">Like ({{ post.likes.count }})</a>
+      <a href="{% url 'share_post' post.id %}" class="btn btn-sm btn-outline-warning">Share ({{ post.shares.count }})</a>
+    </div>
+  </div>
+{% empty %}
+  <p>No posts yet. Be the first to post!</p>
+{% endfor %}
+{% endblock %}
+```
